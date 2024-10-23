@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
+import userRouter from "./routes/user.routes.js";
 
 import connectToMongoDB from "./db/connectToMongoDb.js";
 
@@ -17,6 +18,8 @@ app.use(cookieParser()); // parse incoming cookies from req.cookies
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
+app.use("/api/users", userRouter);
+
 
 
 app.listen(PORT, () => {
