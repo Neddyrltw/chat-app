@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Login = () => {
     return (
@@ -21,18 +20,18 @@ const Login = () => {
                     <div>
                     <label className='label'>
                             <span className='text-base label-text'>Password</span>
-                        </label>
+                    </label>
                         <input
                             type="password"
                             placeholder='Enter Password'
                             className='w-full input input-bordered h-10' />
                     </div>
-                    <a href="#" className='text-sm hover:underline hover:text-sky-400 mt-2 inline-block'>
+                    <a href="#" className='text-sm text-slate-900 hover:underline hover:text-amber-950 mt-2 inline-block'>
                         Don't have an account?
                     </a>
     
                     <div>
-                        <button className='btn btn-block bg-amber-950 btn-sm mt-2'>Login</button>
+                        <button className='btn bg-gray-800 btn-block hover:bg-amber-950 btn-sm mt-2'>Sign Up</button>
                     </div>
                 </form>
     
