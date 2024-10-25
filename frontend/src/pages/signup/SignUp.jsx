@@ -39,9 +39,7 @@ const SignUp = () => {
               placeholder='John Doe'
               className='w-full input input-bordered h-10'
               value={inputs.fullName}
-              onChange={(e) =>
-                setInputs({ ...inputs, fullName: e.target.value })
-              }
+              onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })}
             />
           </div>
           <div>
@@ -53,9 +51,7 @@ const SignUp = () => {
               placeholder='johndoe'
               className='w-full input input-bordered h-10'
               value={inputs.username}
-              onChange={(e) =>
-                setInputs({ ...inputs, username: e.target.value })
-              }
+              onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
             />
           </div>
           <div>
@@ -67,9 +63,7 @@ const SignUp = () => {
               placeholder='Enter Password'
               className='w-full input input-bordered h-10'
               value={inputs.password}
-              onChange={(e) =>
-                setInputs({ ...inputs, password: e.target.value })
-              }
+              onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
             />
           </div>
           <div>
@@ -81,25 +75,19 @@ const SignUp = () => {
               placeholder='Confirm Password'
               className='w-full input input-bordered h-10'
               value={inputs.confirmPassword}
-              onChange={(e) =>
-                setInputs({ ...inputs, confirmPassword: e.target.value })
-              }
+              onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })}
             />
           </div>
 
-          <GenderCheckbox
-            onCheckboxChange={handleCheckboxChange}
-            selectedGender={inputs.gender}
-          />
+          <GenderCheckbox onCheckboxChange={handleCheckboxChange} selectedGender={inputs.gender} />
 
-          <Link
-            to={'/login'}
-            className='text-sm text-slate-900 hover:underline hover:text-amber-950 mt-2 inline-block'>
+          <Link to={'/login'} className='text-sm text-slate-900 hover:underline hover:text-amber-950 mt-2 inline-block'>
             Already have an account?
           </Link>
+
           <div>
-            <button className='btn bg-gray-800 btn-block hover:bg-amber-950 btn-sm mt-2'>
-              Sign Up
+            <button className='btn bg-gray-800 btn-block hover:bg-amber-950 btn-sm mt-2' disabled={loading}>
+              {loading ? <span className='loading loading-spinner'></span> : 'Sign Up'}
             </button>
           </div>
         </form>
