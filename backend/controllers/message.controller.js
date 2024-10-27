@@ -1,4 +1,3 @@
-import { populate } from "dotenv";
 import Conversation from "../models/conversation.model.js"
 import Message from "../models/message.model.js"
 
@@ -51,9 +50,11 @@ export const getMessages = async(req, res) => {
             participants: {$all: [senderId, userToChatId] },
         }).populate("messages");
 
-        res.status(200).json(conversation.messages)
+        if (!conversation) return res.status(200).json([]);
 
+        const messages = conversation.messages;
 
+        res.status(200).json(messages);
     } catch (error) {
         console.log("Error in getMessages controller: ", error.message);
         res.status(500).json({error: "Internal server error"});
