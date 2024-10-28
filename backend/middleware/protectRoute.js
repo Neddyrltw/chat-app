@@ -12,7 +12,7 @@ const protectRoute = async (req, res, next) => {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
         if (!decoded) {
-            return res.status(401).json({ error: "Unauthorized - Ivalid Token" });
+            return res.status(401).json({ error: "Unauthorized - Invalid Token" });
         }
 
         const user = await User.findById(decoded.userId).select("-password");
@@ -27,7 +27,7 @@ const protectRoute = async (req, res, next) => {
 
     } catch (error) {
         console.log("Error in protectedRoute middleware");
-        res.status(500).json({ error: "Intenal server error" });
+        res.status(500).json({ error: "Internal server error" });
         
     }
 };
