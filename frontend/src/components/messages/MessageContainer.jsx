@@ -9,6 +9,9 @@ const MessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
 
   useEffect(() => {
+}, [selectedConversation]);
+
+  useEffect(() => {
     //Cleanup function (unmounts)
     return () => setSelectedConversation(null);
   }, [setSelectedConversation]);
